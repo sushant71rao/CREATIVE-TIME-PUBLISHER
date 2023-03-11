@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Tilt Neon', cursive;
+        }
+        header{
+            display: flex;
+            justify-content:flex-start;
+            align-items: center;
+            height: 70px;
+            background-color: rgb(28, 28, 28);
+        }
+        header .searcher{
+            display: flex;
+            justify-content: center;
+            
+            margin: 10px 5px 10px 30vw;
+        }
+        #srch{
+            height: 30px;
+            width: 20vw;
+            border-radius: 4px;
+            margin: 0px;
+            padding: 0px 4px;
+            font-size: 15px;
+            border: 2px solid black;
+        }
+        header ul li{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0px 3px ;
+            width: 90px;
+            height: 25px;
+            /* background-color: yellow; */
+        }
+        header ul li:hover{
+            color: aliceblue;
+            width: 100px;
+            /* border: 4px solid yellow; */
+            border-radius: 10px;
+            background-color:  #0068d6;
+    ;
+        }
+        header ul{
+            margin:0px 3px 0px 50px;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            color: white;
+            width:50vh;
+            /* background-color: aqua; */
+        }
+        #butn:hover{
+            background-color: #0068d6;
+        }
+        #butn{
+            background-color:  #007bff;
+            color: aliceblue;
+            margin: 0px;
+            width: 80px;
+            height: 30px;
+            font-size: 13px;
+            font-weight: bold;
+            border-radius: 6px;
+            border: 2px solid rgb(33, 33, 33);
+            
+        }
+
+        .jumbotron {
+            padding: 2rem 1rem;
+            margin: 0px 15vw;
+            background-color: #e9ecef;
+            
+            border-radius: .3rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <ul>
+            <li>HOME</li>
+            <li>ABOUT</li>
+            <li>SERVICES</li>
+        </ul>
+
+        <div class="searcher">
+            <input type="text" name="search" id="srch" placeholder="TYPE SOMETHING">
+            <input type="button" value="SEARCH" id="butn">
+        </div>
+    </header>
+    <div class="jumbotron">
+        <h1 class="display-4">The Time is = <span id="times"></span></h1>
+        <p class="lead">We aren late.  We are perfect</p>
+        <hr class="my-4">
+        <p>We use javascript to provide you delayless time.Enjoy</p>
+        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <script>
+        let a;
+        let dt;
+        let timed;
+        setInterval(() => {
+            a=new Date();
+            dt=a.toLocaleDateString();
+            timed=a.getHours() + ':' + a.getMinutes() + ':' + a.getSeconds();
+            document.getElementById('times').innerHTML=timed +" on "+dt;
+            console.log(timed)
+             
+        }, 1000)
+    </script>
+</body>
+</html>
